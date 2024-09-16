@@ -1,0 +1,67 @@
+<div>    
+    <div class="form">
+        <h1>Feedback</h1>
+        <div>
+            <label for="firstname">Firstname: </label>
+            <input type="text" name="firstname" [(ngModel)]="feedBack.firstname"/>
+        </div>
+
+        <div>
+            <label for="lastname">Lastname: </label>
+            <input type="text" name="lastname" [(ngModel)]="feedBack.lastname">
+        </div>
+
+        <div>
+            <label for="age">Age: </label>
+            <input type="text" name="age" [(ngModel)]="feedBack.age">
+        </div>
+
+        <div>
+            <label for="gender">Gender: </label>
+        <select #genderInput name="gender" [(ngModel)]="gender"
+        (ngModelChange)="genderSelected(genderInput.value)">
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Other</option>
+        </select>  
+        
+        <div *ngIf="showAddGenderInfo; else empty">
+            <input type="text" placeholder="Type your gender right here!"/>
+        </div>             
+        
+        <ng-template #empty></ng-template>
+
+        </div>
+        
+        <div>
+            <label for="">How did you like the Blog? </label>
+
+            <input type="radio" name="rad">
+            <label for="rad">Not really</label>
+                        
+            <input type="radio" name="rad">
+            <label for="rad">Good enough</label>
+
+            <input type="radio" name="rad">
+            <label for="rad">The best!</label>
+            
+        </div>
+
+        <div>
+            <label for="feedback">Feedback: </label>
+            <textarea name="feedback" cols="30" rows="10"
+             [(ngModel)]="feedBack.feedback"></textarea>
+        </div>        
+        
+        <div>
+            <label for="backEmail">Email me back with answer: </label>
+            <input type="checkbox" name="backEmail" 
+            [(ngModel)]="feedBack.emailBack">
+        </div>
+        
+        <div>
+            <button (click)="onSendClick()">Send</button>
+            <button (click)="onClearClick()">Clear</button>
+        </div>
+    </div>
+</div>
