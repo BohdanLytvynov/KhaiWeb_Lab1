@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class FeedbackComponent {
   feedBack : FeedBack = { id: -1, firstname: '', lastname: '', age: 0, 
-    gender: '', like: 0, feedback: '', emailBack: false
+    gender: '', like: '', feedback: '', emailBack: false
    };   
   showAddGenderInfo : boolean = false;
   gender : any;
@@ -25,6 +25,11 @@ export class FeedbackComponent {
   }
 
   //Functions
+
+  likeChanged(value : string)
+  {
+    this.feedBack.like = value;
+  }
 
   genderSelected(value : string)
   {

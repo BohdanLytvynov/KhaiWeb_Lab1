@@ -2,3 +2,18 @@
 {
     text-align: center;
 }
+
+h1{
+    color: orange;
+}
+
+.form div label 
+{
+    margin-right: 20px;
+}
+
+.buttons button
+{
+    margin-right: 20px;
+}
+

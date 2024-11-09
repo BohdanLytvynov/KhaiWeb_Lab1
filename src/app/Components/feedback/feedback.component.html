@@ -34,15 +34,15 @@
         </div>
         
         <div>
-            <label for="">How did you like the Blog? </label>
+            <label>How did you like the Blog? </label>
 
-            <input type="radio" name="rad">
+            <input #like1 type="radio" name="rad" (ngModelChange)="likeChanged('Not really')">
             <label for="rad">Not really</label>
                         
-            <input type="radio" name="rad">
+            <input #like2 type="radio" name="rad" (ngModelChange)="likeChanged('Good enough')">
             <label for="rad">Good enough</label>
 
-            <input type="radio" name="rad">
+            <input #like3 type="radio" name="rad" (ngModelChange)="likeChanged('The best!')">
             <label for="rad">The best!</label>
             
         </div>
@@ -59,7 +59,7 @@
             [(ngModel)]="feedBack.emailBack">
         </div>
         
-        <div>
+        <div class="buttons">
             <button (click)="onSendClick()">Send</button>
             <button (click)="onClearClick()">Clear</button>
             <button (click)="onBackClick()" >Back</button>
