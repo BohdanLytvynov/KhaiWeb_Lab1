@@ -18,34 +18,27 @@ a{
 
 a:hover
 {
-    border: #4f2762 4px solid;
+    border: #4f2762 2px solid;
     background: lightgrey;
     color: black;    
 }
 
 nav{
+    display: flex;
+    flex-direction: row;
     background-color: gray;    
-    text-align: left;
+    justify-content: center;
+    margin: 10px;    
 }
 
 main
 {
-    background: black;
+    background-image: url("../../../../public/images/hexagon.jpg");    
 }
 
 h1{
     color: white;
     text-align: center;
-}
-
-.posts{
-    margin-top: 10px;
-}
-
-.posts{
-    margin-top: 0px;
-    margin-left: 20px;     
-    margin-bottom: 20px; 
 }
 
 footer {
@@ -61,3 +54,12 @@ footer {
 {
     background: black;
 }
+
+.container
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+

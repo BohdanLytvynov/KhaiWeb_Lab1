@@ -8,11 +8,10 @@
       </nav>
     </header>
     <main>
-      <img class="corp-image" src="images/hexagon.jpg" alt="Corporate Logo"/>
-      <h1>Here is our Blog</h1>
-      <div class="posts">
-        <app-post class="post"></app-post>
-      </div>  
+      <h1>Here is Our Blog</h1>     
+      <div class="container">
+        <app-post *ngFor="let p of dataService.getPosts()" [post]="p"></app-post>
+      </div> 
     </main>
     
     <footer>
