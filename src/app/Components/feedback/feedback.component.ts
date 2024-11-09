@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FeedBack } from '../../Interfaces/feedback';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback',
@@ -17,7 +18,8 @@ export class FeedbackComponent {
   showAddGenderInfo : boolean = false;
   gender : any;
 
-  constructor()
+  
+  constructor(private router : Router)
   {
 
   }
@@ -46,5 +48,10 @@ export class FeedbackComponent {
   onClearClick()
   {
 
+  }
+
+  onBackClick()
+  {
+    this.router.navigateByUrl("")
   }
 }

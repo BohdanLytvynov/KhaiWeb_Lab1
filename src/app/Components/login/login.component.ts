@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +14,20 @@ export class LoginComponent {
   login : string = '';
   pass : string = '';
 
+  constructor(private router : Router)
+  {
+    
+  }
+
   //Functions
 
   onLoginPressed()
   {
     
+  }
+
+  onBackPressed()
+  {
+    this.router.navigateByUrl("");
   }
 }
