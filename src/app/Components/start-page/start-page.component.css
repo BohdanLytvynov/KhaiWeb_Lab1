@@ -9,6 +9,7 @@ a{
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
+    text-align: center;
     color: white;
     margin-left: 20px;
     border: black 2px solid;
@@ -34,7 +35,9 @@ nav{
 
 main
 {
-    background-image: url("../../../../public/images/hexagon.jpg");    
+    background-image: url("../../../../public/images/hexagon.jpg"); 
+    margin-bottom: 1rem;  
+    width: 100%;    
 }
 
 h1{
@@ -61,6 +64,27 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    gap: 1rem;
+    margin: 10px;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.search label{
+    color: white;
+    margin-right: 1rem;
+}
+
+.search-result{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1rem;
     gap: 1rem;
 }
 

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { FeedBack } from '../../Interfaces/feedback';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './feedback.component.html',
-  styleUrl: './feedback.component.css'
+  styleUrl: './feedback.component.css'  
 })
 export class FeedbackComponent {
   feedBack : FeedBack = { id: -1, firstname: '', lastname: '', age: 0, 

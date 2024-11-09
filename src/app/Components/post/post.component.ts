@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Post } from '../../Interfaces/post';
 import { FormsModule } from '@angular/forms';
 
@@ -10,14 +10,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './post.component.css'
 })
 
-export class PostComponent {
+export class PostComponent{
 
   @Input("post")
   post! : Post
-  
+
 constructor()
 {  
   
 }
-
+  
 }
