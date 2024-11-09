@@ -5,7 +5,7 @@ export interface FeedBack
     lastname : string;
     age : number;
     gender : string;
-    like: number;
+    like: string;
     feedback :string;
     emailBack: boolean;
 }

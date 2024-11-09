@@ -1,7 +1,7 @@
 <div>
     <div class="form">
 
-        <h1>SignUp</h1>
+        <h1 class="header1">SignUp</h1>
 
         <div>
             <label for="login">Login: </label>
@@ -27,8 +27,9 @@
             (ngModelChange)="onPassChanged(pass2inp.value)">
         </div>
 
-        <div>
-            <button (click)="onSignIn()">SignUp</button>
+        <div class="buttons">
+            <button class="simple-but" (click)="onSignIn()">SignUp</button>
+            <button class="simple-but" (click)="onBackPressed()">Back</button>
         </div>
 
         </div>

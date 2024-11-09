@@ -7,12 +7,25 @@
         <a href="/signup">Sign Up</a>
       </nav>
     </header>
+
     <main>
-      <img class="corp-image" src="images/hexagon.jpg" alt="Corporate Logo"/>
-      <h1>Here is our Blog</h1>
-      <div class="posts">
-        <app-post class="post"></app-post>
-      </div>  
+      <h1>Here is Our Blog</h1>     
+      <div class="container">
+        <app-post *ngFor="let p of dataService.getMostPopularPosts()" [post]="p"></app-post>
+      </div> 
+      
+      <div class="search">
+        <label for="search">Search for Blog</label>
+        <input #searchInput type="text" name="search" placeholder="Enter Blog title">
+        <button (click)="onSearchButtonPressed(searchInput.value)" class="simple-but">Search</button>
+        <button (click)="onClearPresed()" class="simple-but">Clear</button>
+      </div>
+      <h1>Search Results:</h1>
+
+      <div class="search-result">
+        <app-post *ngFor="let p of searchResult" [post]="p"></app-post>        
+      </div>
+
     </main>
     
     <footer>
