@@ -1,13 +1,43 @@
 <div class="back">
     <header>
-      <nav>
+      <div [ngClass]="authorized? 'container-after-login' : ''"> 
+      <nav [ngClass]="authorized? 'nav-after-login' : 'nav-before-login'">
         <a href="">Home</a>
         <a href="/feedback">Feedback</a>
-        <a href="/login">Login</a>
-        <a href="/signup">Sign Up</a>
+        <a href="/login" [ngClass]="authorized? 'a-hide' : ''">Login</a>
+        <a href="/signup">Sign Up</a>        
       </nav>
+      <div [ngClass]="authorized? 'avatar-container':'avatar-container-hide'">
+        <img src="/images/avatar.jpg" class="avatar" alt="Avatar Logo"
+        (mouseenter)="onAvatarMouseOver()">
+        <p>
+          {{user.login}}
+        </p>
+      </div>      
+    </div>    
     </header>
 
+    <div [ngClass]="displayMenu? 'usermenu':'hide' ">
+      <div class="usermenu-section-left">
+        <div (click)="onMyProfileClick()">My Profile</div>
+        <div (click)="onViewStatisicsClick()">View Statistics</div>
+        <div (click)="onMenuBackPressed()">Back</div>
+      </div>
+      <div class="usermenu-section-right">
+        <div [ngSwitch]="selectedUserMenuItem">
+          <div *ngSwitchCase="0">
+            <app-user [user]="user" (LogOutClicked)="onLogout($event)"/>
+          </div>
+          <div *ngSwitchCase="1">
+            <h1>User statistics:</h1>
+            <app-graph>
+              
+            </app-graph>
+          </div>          
+        </div>        
+      </div>
+    </div>
+    
     <main>
       <h1>Here is Our Blog</h1>     
       <div class="container">

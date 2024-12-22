@@ -1,0 +1,32 @@
+<div class="user-component-container">
+    <div class="user-component-container-left">
+
+        <div class="avatar-container">
+            <img src="/images/avatar.jpg" alt="User profile Photo" class="avatar">
+            <div>
+                {{user.surename}}
+            </div>
+            <div>
+                {{user.name}}
+            </div>
+        </div>
+        
+    </div>
+    <div class="user-component-container-right">
+        <div class="about-container-full">
+            <h1>About:</h1>
+            <div class="about-container">
+                <div class="about-names-container">
+                    <div>Login:</div>
+                    <div>Email:</div>
+                </div>
+
+                <div class="about-values-container">
+                    <div>{{user.login}}</div>
+                    <div>{{user.email}}</div>
+               </div>
+            </div>
+           <span><a (click)="onLogOutClick()">Logout</a></span>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PostComponent } from "./Components/post/post.component";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +9,6 @@ import { PostComponent } from "./Components/post/post.component";
   styleUrl: './app.component.css',
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-  title = 'lab work number 1';
+export class AppComponent{
+  title = 'lab work number 1';  
 }

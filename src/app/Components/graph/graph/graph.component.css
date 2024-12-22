@@ -1,0 +1,43 @@
+.horizontal-bar-chart {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 10px;
+    color: #5b626b;
+    gap: 1rem; 
+}
+.horizontal-bar-chart h5 {
+    margin-top: 0px;
+}
+
+.horizontal-bar-chart .chart-row {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 500px;
+    width: 100%;    
+}
+
+.horizontal-bar-chart .chart-row .value {
+    
+    line-height: 25px;     
+}
+
+.horizontal-bar-chart .chart-row .bar {
+    display: flex;
+    background: repeating-linear-gradient(to bottom, #ccc, #ccc 1px, #fff 1px, #fff
+    50px);
+    padding-bottom: 3px;
+    flex-grow: 1;    
+}
+
+.horizontal-bar-chart .chart-row .bar span{   
+    background-color: #626ed4;
+    opacity: 0.8;
+    color: white;
+    line-height: 25px;
+    padding-left: 20px;  
+    align-self: flex-end;  
+    width: 100%    
+}

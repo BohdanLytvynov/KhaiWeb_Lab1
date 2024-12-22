@@ -1,0 +1,105 @@
+
+.user-component-container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: 100vmin;
+}
+
+.user-component-container-left
+{
+    flex: 1;
+    background: #3B214F;
+}
+
+.user-component-container-right
+{
+    flex: 3;
+}
+
+.avatar
+{   
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;    
+    margin-top: 2rem;   
+}
+
+.avatar-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 2rem;  
+}
+
+.avatar-container div
+{
+    color: white;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.about-container-full
+{
+    display: flex;
+    background: #D0C9D6;
+    flex-direction: column;
+    justify-content: start;        
+    gap: 2rem;
+    height: 40%;
+    border-radius: 5px;
+}
+
+.about-container-full h1{
+    margin-left: 2rem;
+}
+
+.about-container-full a{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 1rem; 
+    cursor: pointer;   
+}
+
+.about-container-full a:hover{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 1rem;
+    border: solid black 2px;      
+}
+
+.about-container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
+.about-names-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+}
+
+.about-names-container div{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.about-values-container div{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.about-values-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem
+}

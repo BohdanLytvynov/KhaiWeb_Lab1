@@ -18,4 +18,10 @@
         </div>
 
     </div>
+
+<div class="error-msg" *ngIf="!loginSuccess; else empty">
+    {{error}}
+</div>
+<ng-template #empty></ng-template>
+
 </div>

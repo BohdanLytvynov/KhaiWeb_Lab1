@@ -24,13 +24,114 @@ a:hover
     color: black;    
 }
 
+.a-hide{
+    display: none;
+}
+
 nav{
     display: flex;
     flex-direction: row;
     background-color: gray;    
     justify-content: center;
     align-items: center;
-    margin: 10px;    
+    margin: 10px;      
+}
+
+.nav-before-login {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;    
+    justify-content: center;
+    align-items: center;
+    margin: 10px;      
+}
+
+.nav-after-login{
+    display: flex;
+    flex-direction: row;
+    background-color: gray;    
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;        
+}
+
+.container-after-login
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: darkslateblue;
+}
+
+.avatar-container
+{
+    display: flex;
+    margin-right: 10px;
+}
+
+.avatar-container p {
+    color: white;
+    font-size: 18px;
+}
+
+.avatar
+{   
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.avatar-container-hide{
+    display: none;
+}
+
+.usermenu
+{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    z-index: 1;
+    background: white;
+    height: 100vmin;
+    width: 100vmax
+}
+
+.hide{
+    display: none;
+}
+
+.usermenu-section-left
+{
+    background: #232A46;    
+    flex:1
+}
+
+.usermenu-section-right
+{
+    background: white;    
+    flex:4
+}
+
+.usermenu-section-right h1
+{
+    background: white;
+    color: black;
+    flex:4
+}
+
+.usermenu-section-left div{
+    color: white;
+    font-size: 20px;
+    margin: 20px;    
+    cursor: pointer
+}
+ 
+.usermenu-section-left div:hover
+{
+    border-bottom: solid white 2px;
 }
 
 main
@@ -43,6 +144,7 @@ main
 h1{
     color: white;
     text-align: center;
+    margin-top: 0px;
 }
 
 footer {
