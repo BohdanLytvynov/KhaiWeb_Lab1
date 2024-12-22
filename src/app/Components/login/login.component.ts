@@ -44,8 +44,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   {
     let result : AuthResult = this.auth.login(this.login, this.pass);
 
-    console.log(result)
-
     if(!result.success)
     {
       this.loginSuccess = result.success;
