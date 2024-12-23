@@ -1,32 +1,35 @@
-<div>    
+   
     <div class="form">
         <h1>Feedback</h1>
-        <div>
-            <label for="firstname">Firstname: </label>
-            <input type="text" name="firstname" [(ngModel)]="feedBack.firstname"/>
+
+        <div class="form-group">            
+            <input type="text" class="form-control" 
+            id="firstname" placeholder="Enter your Firstname...">
         </div>
 
-        <div>
-            <label for="lastname">Lastname: </label>
-            <input type="text" name="lastname" [(ngModel)]="feedBack.lastname">
+        <div class="form-group">            
+            <input type="text" class="form-control" id="lastname"
+             placeholder="Eneter your Lastname...">
         </div>
 
-        <div>
-            <label for="age">Age: </label>
-            <input type="text" name="age" [(ngModel)]="feedBack.age">
+        <div class="form-group">            
+            <input type="text" class="form-control" 
+            id="age" 
+            placeholder="Enter your Age...">
         </div>
 
         <div>
             <label for="gender">Gender: </label>
-        <select #genderInput name="gender" [(ngModel)]="gender"
+        <select class="form-control" #genderInput name="gender" [(ngModel)]="gender"
         (ngModelChange)="genderSelected(genderInput.value)">
             <option value="1">Male</option>
             <option value="2">Female</option>
             <option value="3">Other</option>
         </select>  
         
-        <div *ngIf="showAddGenderInfo; else empty">
-            <input type="text" placeholder="Type your gender right here!"/>
+        <div class="form-group" *ngIf="showAddGenderInfo; else empty">
+            <input type="text" class="form-control" 
+            placeholder="Type your gender right here..."/>
         </div>             
         
         <ng-template #empty></ng-template>
@@ -35,34 +38,52 @@
         
         <div>
             <label>How did you like the Blog? </label>
-
-            <input #like1 type="radio" name="rad" (ngModelChange)="likeChanged('Not really')">
-            <label for="rad">Not really</label>
-                        
-            <input #like2 type="radio" name="rad" (ngModelChange)="likeChanged('Good enough')">
-            <label for="rad">Good enough</label>
-
-            <input #like3 type="radio" name="rad" (ngModelChange)="likeChanged('The best!')">
-            <label for="rad">The best!</label>
             
-        </div>
+            <div class="form-check form-check-inline">
+                <input #like1 class="form-check-input" 
+                type="radio" 
+                name="rad"                                
+                (ngModelChange)="likeChanged('Not really')">
+                <label class="form-check-label" 
+                for="rad">Not really</label>
+            </div>
 
-        <div>
+            <div class="form-check form-check-inline">
+                <input #like2 class="form-check-input" 
+                type="radio"                 
+                name="rad"
+                (ngModelChange)="likeChanged('Good enough')">
+                <label class="form-check-label" 
+                for="rad">Good enough</label>
+            </div>
+                                    
+            <div class="form-check form-check-inline">
+                <input #like3 class="form-check-input" 
+                type="radio"                 
+                name="rad"
+                (ngModelChange)="likeChanged('The best!')">
+                <label class="form-check-label" 
+                for="rad">The best!</label>
+            </div>            
+
+        </div>
+       
+        <div class="form-group">
             <label for="feedback">Feedback: </label>
-            <textarea name="feedback" cols="30" rows="10"
+            <textarea class="form-control" name="feedback" cols="40" rows="5"
              [(ngModel)]="feedBack.feedback"></textarea>
         </div>        
-        
-        <div>
-            <label for="backEmail">Email me back with answer: </label>
-            <input type="checkbox" name="backEmail" 
+              
+        <div class="form-check">
+            <label class="form-check-label" for="backEmail">Email me back with answer: </label>
+            <input class="form-check-input" type="checkbox" name="backEmail" 
             [(ngModel)]="feedBack.emailBack">
         </div>
         
         <div class="buttons">
-            <button class="simple-but" (click)="onSendClick()">Send</button>
-            <button class="simple-but" (click)="onClearClick()">Clear</button>
-            <button class="simple-but" (click)="onBackClick()" >Back</button>
+            <button class="btn btn-primary btn-sm" (click)="onSendClick()">Send</button>
+            <button class="btn btn-primary btn-sm" (click)="onClearClick()">Clear</button>
+            <button class="btn btn-danger btn-sm" (click)="onBackClick()" >Back</button>
         </div>
     </div>
-</div>
+

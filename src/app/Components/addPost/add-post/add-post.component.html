@@ -1,0 +1,113 @@
+<h4>add the new Post:</h4>
+<form style="margin-left: 2rem; margin-right: 2rem;">
+
+    <div class="form-group row">
+        <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputTitle" 
+          name="inputTitle"
+          placeholder="Input title of your post here ..."
+          [(ngModel)]="title">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputText" class="col-sm-2 col-form-label">Text</label>
+        <div class="col-sm-10">
+          <textarea type="text" class="form-control" id="inputText" name="inputText"  
+          placeholder="Input text of your post here ..." cols="10" rows="2"
+          [(ngModel)]="text">
+            </textarea>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputText" class="col-sm-2 col-form-label">Categories:</label>
+
+        <div class="radio-container">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" 
+                id="Radios1"
+                value="Science" [(ngModel)]="category">
+                <label class="form-check-label" for="Radios1">
+                  Science
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" 
+                id="Radios2" 
+                value="Poetry" [(ngModel)]="category">
+                <label class="form-check-label" for="Radios2">
+                  Poetry
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" 
+                id="Radios3" 
+                value="ART" [(ngModel)]="category">
+                <label class="form-check-label" for="Radios3">
+                  ART
+                </label>
+            </div>
+        </div>                        
+    </div>
+
+    <div class="form-group row">
+        <label for="inputLanguage" class="col-sm-2 col-form-label">Language</label>
+        <div class="col-sm-10">
+        <select class="form-control" id="inputLanguage" name="inputLanguage"
+         placeholder="Input title of your post here ..."
+        [(ngModel)]="language">
+            <option value="Unselected" selected>Select language please...</option>
+            <option value="English">English</option>
+            <option value="German">German</option>
+            <option value="Franch">Franch</option>
+            <option value="Ukrainian">Ukrainian</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputImage" class="col-sm-2 col-form-label">Image</label>
+        <div class="col-sm-10">
+            
+            <div class="input-group mb-3" name="inputImage">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile02">
+                  <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                </div>                
+              </div>
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputTitle" class="col-sm-2 col-form-label">Theme</label>
+        <div class="col-sm-10">
+        
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1">Enable Dark Theme</label>
+              </div>
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputPublish" class="col-sm-2 col-form-label">Publish</label>
+        <div class="col-sm-10">
+        
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="visit" name="visit"
+                [(ngModel)]="visible">
+                <label class="form-check-label" for="visit">
+                  Visible on site
+                </label>
+              </div>
+
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="onPublishPressed()">Publish</button>
+
+</form>

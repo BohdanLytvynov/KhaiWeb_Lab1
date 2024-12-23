@@ -11,17 +11,19 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthResult, IAuthResult, Operation } from '../../Interfaces/authresult';
 import { UserComponent } from "../user/user/user.component";
 import { GraphComponent } from "../graph/graph/graph.component";
+import { AddPostComponent } from "../addPost/add-post/add-post.component";
 
 export enum UserMenuItem
 {
   MyProfile = 0,
-  ViewStatistics
+  ViewStatistics,
+  AddPost
 }
 
 @Component({
   selector: 'app-start-page',
   standalone: true,
-  imports: [PostComponent, FormsModule, CommonModule, UserComponent, GraphComponent],
+  imports: [PostComponent, FormsModule, CommonModule, UserComponent, GraphComponent, AddPostComponent],
   templateUrl: './start-page.component.html',
   styleUrls: ['./start-page.component.css', '../start-page/start-page.mobile.css']
 })
@@ -105,5 +107,10 @@ export class StartPageComponent implements OnInit, OnDestroy {
   onMyProfileClick()
   {
     this.selectedUserMenuItem = UserMenuItem.MyProfile
+  }
+
+  onAddPostClicked()
+  {
+    this.selectedUserMenuItem = UserMenuItem.AddPost
   }
 }

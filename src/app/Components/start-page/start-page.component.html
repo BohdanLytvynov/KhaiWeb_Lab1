@@ -21,7 +21,8 @@
       <div class="usermenu-section-left">
         <div (click)="onMyProfileClick()">My Profile</div>
         <div (click)="onViewStatisicsClick()">View Statistics</div>
-        <div (click)="onMenuBackPressed()">Back</div>
+        <div (click)="onAddPostClicked()">Add Post</div>
+        <div (click)="onMenuBackPressed()">Back</div>        
       </div>
       <div class="usermenu-section-right">
         <div [ngSwitch]="selectedUserMenuItem">
@@ -30,10 +31,12 @@
           </div>
           <div *ngSwitchCase="1">
             <h1>User statistics:</h1>
-            <app-graph>
-              
+            <app-graph>              
             </app-graph>
-          </div>          
+          </div> 
+          <div *ngSwitchCase="2">
+            <app-add-post></app-add-post>
+          </div>         
         </div>        
       </div>
     </div>
