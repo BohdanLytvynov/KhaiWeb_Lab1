@@ -1,0 +1,79 @@
+
+<div style="margin-top: 1rem; margin-right: 2rem; margin-left: 1rem;">   
+    <div class="search">
+        <label for="search">Search for Blog</label>
+        <input #searchInput type="text" name="search" placeholder="Enter Blog title">
+        <button (click)="onSearchButtonPressed(searchInput.value)" class="simple-but">Search</button>
+        <button (click)="onClearPresed()" class="simple-but">Clear</button>
+      </div>
+    <div *ngIf="displaySearchResults; else empty"class="flex-container-clm">
+
+    <h1>Search Results:</h1>
+    
+    <form>
+        <div class="form-group">
+            <label for="columnSelect">Select column to sort by</label>
+            <select #cSel (change)="onColumnSelected(cSel.value)" class="form-control" 
+            id="columnSelect" 
+            name="columnSelect">
+              <option value="1" selected>id</option>
+              <option value="2">title</option>
+              <option value="3">created_date</option>            
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="orderSelect">Example select</label>
+            <select #orderSel (change)="onOrderSelected(orderSel.value)"
+             class="form-control" id="orderSelect" 
+            name="orderSelect">
+              <option value="1" selected>ascendence</option>
+              <option value="2">descendence</option>              
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" (click)="onSortButtonPressed()">
+                Sort
+            </button>
+          </div>
+    </form>
+
+    <table class="table table-striped">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Tittle</th>
+            <th scope="col">Created At</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          @for (item of this.searchResult; track $index) 
+          {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.createdDate | date}}</td>
+                <td>
+                    <button class="btn btn-primary">
+                        View
+                    </button>
+                </td>
+            </tr>
+          }
+        </tbody>
+    </table>
+    </div>
+    <ng-template #empty>
+
+    </ng-template>
+    
+</div>
+
+
+
+

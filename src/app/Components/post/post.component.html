@@ -1,4 +1,5 @@
-<article>
+<article [ngClass]="post.visibleOnSite? 'display' : 'hide' ">
+    <p>Created at: {{post.createdDate | date}}</p>
     <h2>{{post.title}}</h2>
     <p>{{post.text}}</p>
 </article>

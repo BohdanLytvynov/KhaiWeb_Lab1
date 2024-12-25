@@ -1,37 +1,138 @@
-<div>
-    <div class="form">
-
-        <h1 class="header1">SignUp</h1>
-
-        <div>
-            <label for="login">Login: </label>
-            <input type="text" name="login" [(ngModel)]="login">
+<div class="container justify-content-center">
+    <div class="card">
+        <div class="card-header">
+            Register
         </div>
 
-        <div>
-            <label for="firstname">First Name: </label>
-            <input type="text" name="firstname" [(ngModel)]="firstname">
-        </div>
-            <label for="lastname">Last Name: </label>
-            <input type="text" name="lastname" [(ngModel)]="lastname">
-        <div>
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="login" class="col-md-4 col-form-label text-md-right">Login: </label>
+                    <div class="col-md-6">
+                        <input #loginRef type="text" name="login" id="login"
+                        [(ngModel)]="login"
+                        (ngModelChange)="onLoginChanged(loginRef.value)"
+                        [ngClass]="validation.GetValidArrayItem(0)? 'form-control is-valid' : 
+                        'form-control is-invalid' ">
+                        <div class="invalid-feedback">
+                            Enter Login Please
+                        </div>
+                        <div class="valid-feedback">
+                            All correct
+                        </div>
+                    </div>
+                </div>
 
-        <div>
-            <label for="pass1">Password: </label>
-            <input type="password" name="pass1" [(ngModel)]="pass1">
-        </div>
+                <div class="form-group row">
+                    <label for="email" class="col-md-4 col-form-label text-md-right">Email: </label>
+                    <div class="col-md-6">
+                        <input #emailRef type="email" name="email" id="email"
+                        [(ngModel)]="email"
+                        (ngModelChange)="onEmailChanged(emailRef.value)"
+                        [ngClass]="validation.GetValidArrayItem(1)? 'form-control is-valid' : 
+                        'form-control is-invalid' ">
+                        <div class="invalid-feedback">
+                            {{emailErrmsg}}
+                        </div>
+                        <div class="valid-feedback">
+                            All correct
+                        </div>
+                    </div>
+                </div>
 
-        <div>
-            <label for="pass2">Confirm your password: </label>
-            <input type="password" name="pass2" [(ngModel)]="pass2" #pass2inp
-            (ngModelChange)="onPassChanged(pass2inp.value)">
-        </div>
+                <div class="form-group row">
+                    <label for="firstname" class="col-md-4 col-form-label text-md-right">Firstname: </label>
+                    <div class="col-md-6">
+                        <input #firstnameRef type="text" name="firstname" id="firstname"
+                        [(ngModel)]="firstname"
+                        (ngModelChange)="onFirstNameChanged(firstnameRef.value)"
+                        [ngClass]="validation.GetValidArrayItem(2)? 'form-control is-valid' : 
+                        'form-control is-invalid' ">
+                        <div class="invalid-feedback">
+                            Please enter your Firstname
+                        </div>
+                        <div class="valid-feedback">
+                            All correct
+                        </div>
+                    </div>
+                </div>
 
-        <div class="buttons">
-            <button class="simple-but" (click)="onSignIn()">SignUp</button>
-            <button class="simple-but" (click)="onBackPressed()">Back</button>
-        </div>
+                <div class="form-group row">
+                    <label for="lastname" class="col-md-4 col-form-label text-md-right">Lastname: </label>
+                    <div class="col-md-6">
+                        <input #lastnameRef type="text" name="lastname" id="lastname"
+                        [(ngModel)]="lastname"
+                        (ngModelChange)="onLastNameChanged(lastnameRef.value)"
+                        [ngClass]="validation.GetValidArrayItem(3)? 'form-control is-valid' : 
+                        'form-control is-invalid' ">
+                        <div class="invalid-feedback">
+                            Please enter your Lasttname
+                        </div>
+                        <div class="valid-feedback">
+                            All correct
+                        </div>
+                    </div>
+                </div>
 
+                <div class="form-group row">
+                    <label for="password1" class="col-md-4 col-form-label text-md-right">Password: </label>
+                    <div class="col-md-6">
+                        <input #pass1Ref type="password" name="password1" id="password1"
+                        [(ngModel)]="pass1"                                                
+                        (ngModelChange)="onPass1Changed(pass1Ref.value)"
+                        [ngClass]="validation.GetValidArrayItem(4)? 'form-control is-valid' : 
+                        'form-control is-invalid' ">
+                        <div class="invalid-feedback">
+                            Password is the required field
+                        </div>
+                        <div class="valid-feedback">
+                            All correct
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password2" class="col-md-4 col-form-label text-md-right">Confirm Password: </label>
+                    <div class="col-md-6">
+                        <input #pass2Ref type="password" name="password2" id="password2"
+                        [(ngModel)]="pass2"
+                        (ngModelChange)="onPass2Changed(pass2Ref.value)"
+                        [ngClass]="validation.GetValidArrayItem(5)? 'form-control is-valid' : 
+                        'form-control is-invalid' ">
+                        <div class="invalid-feedback">
+                            {{pass2Errmsg}}
+                        </div>
+                        <div class="valid-feedback">
+                            All correct
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" [ngClass]="canRegisterBePressed? 
+                    'btn btn-primary enabled' : 'btn btn-primary disabled'" (click)="onSignIn()">
+                        Register
+                    </button>
+
+                    <button class="btn btn-danger" (click)="onBackPressed()">
+                        Back
+                    </button>
+                    <a href="login" class="btn btn-link">Go to Login</a>
+                </div>
+
+                <div class="flex-container-rw just-center">
+                    <div
+                    [ngClass]="result.success? 'hide ' : 'err-msg-style'">
+                        {{result.error}}
+                    </div>
+                </div>
+
+            </form>
         </div>
     </div>
-</div>
+</div>   
+
+       
+
+       
+        

@@ -31,5 +31,24 @@
     margin: 1rem;
 }
 
+.hide{
+    display: none;
+}
+
+.display {
+    display: block;
+}
+
+.flex-container-clm
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container-rw
+{
+    display: flex;
+    flex-direction: row;
+}
 
 

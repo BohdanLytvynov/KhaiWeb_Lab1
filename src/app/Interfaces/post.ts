@@ -7,4 +7,5 @@ export interface Post
     category : string
     language : string
     visibleOnSite : boolean
+    createdDate : Date
 }

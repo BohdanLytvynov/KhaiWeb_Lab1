@@ -61,6 +61,8 @@ export class AuthenticationService {
       if(this.users.find(x => x.email === user.email))
         throw new Error(`Email: ${user.email} already exists!`);
 
+      user.id = this.users.at(0)?.id ?? -1 
+
       this.users.unshift(user);
     } 
     catch (error) 

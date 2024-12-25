@@ -1,0 +1,50 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.search label{
+    color: white;
+    margin-right: 1rem;
+}
+
+.search-result{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+h1{
+    color: white;
+    align-self: center;
+}
+
+.rw-cont
+{
+    gap: 2rem;
+}
+
+th{
+    font-size: 20px;
+    color: white;
+}
+
+td{
+    font-size: 20px;
+    color: white;
+}
+
+tbody
+{
+    background: #34333B;
+}
+
+tr:nth-of-type(even)
+{
+    background: #8A8899;
+}
+

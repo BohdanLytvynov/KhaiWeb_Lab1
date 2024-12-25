@@ -13,24 +13,28 @@ export class DataService {
     this.posts.unshift({ id: 1, title:"Kif, I have mated with a woman. Inform the men.", 
       text:"I am the man with no name, Zapp Brannigan! Who's brave enough to fly" +
 "into something we all keep calling a death sphere? Meh. And until then, I can" +
-"never die?", category:'ART', language:'English',  visibleOnSite: true });
+"never die?", category:'ART', language:'English',  visibleOnSite: true, 
+createdDate: new Date(2012,7,23,5,21,34) });
 
     this.posts.unshift({ id: 2, title:"Kids don't turn rotten just from watching TV.", 
       text:"Oh yeah, good luck with that. I haven't felt much of anything since"+
 "my guinea pig died. I'll tell them you went down prying the wedding ring off"+
 "his cold, dead finger. Now, now. Perfectly symmetrical violence never solved"+
-"anything.", category:'ART', language:'English',  visibleOnSite: true});
+"anything.", category:'ART', language:'English',  visibleOnSite: true,
+createdDate: new Date(2014,8,23,12,21,34)});
 
 this.posts.unshift({ id: 3, title:"Kif, I have mated with a woman. Inform the men.", 
   text:"I am the man with no name, Zapp Brannigan! Who's brave enough to fly" +
 "into something we all keep calling a death sphere? Meh. And until then, I can" +
-"never die?", category:'ART', language:'English',  visibleOnSite: true  });
+"never die?", category:'ART', language:'English',  visibleOnSite: true,
+createdDate: new Date(2009,11,25,2,25,36)  });
 
 this.posts.unshift({ id: 4, title:"Kids don't turn rotten just from watching TV.", 
       text:"Oh yeah, good luck with that. I haven't felt much of anything since"+
 "my guinea pig died. I'll tell them you went down prying the wedding ring off"+
 "his cold, dead finger. Now, now. Perfectly symmetrical violence never solved"+
-"anything.", category:'ART', language:'English',  visibleOnSite: true  });
+"anything.", category:'ART', language:'English',  visibleOnSite: true,
+createdDate: new Date(2010,12,23,9,22,32)  });
   }
 
   getMaxId() : number | undefined

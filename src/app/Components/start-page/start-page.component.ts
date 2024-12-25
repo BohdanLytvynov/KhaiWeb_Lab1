@@ -12,6 +12,7 @@ import { AuthResult, IAuthResult, Operation } from '../../Interfaces/authresult'
 import { UserComponent } from "../user/user/user.component";
 import { GraphComponent } from "../graph/graph/graph.component";
 import { AddPostComponent } from "../addPost/add-post/add-post.component";
+import { SearchPostsComponent } from "../search-posts/search-posts/search-posts.component";
 
 export enum UserMenuItem
 {
@@ -23,7 +24,7 @@ export enum UserMenuItem
 @Component({
   selector: 'app-start-page',
   standalone: true,
-  imports: [PostComponent, FormsModule, CommonModule, UserComponent, GraphComponent, AddPostComponent],
+  imports: [PostComponent, FormsModule, CommonModule, UserComponent, GraphComponent, AddPostComponent, SearchPostsComponent],
   templateUrl: './start-page.component.html',
   styleUrls: ['./start-page.component.css', '../start-page/start-page.mobile.css']
 })
@@ -51,9 +52,7 @@ export class StartPageComponent implements OnInit, OnDestroy {
   {
     this.selectedUserMenuItem = UserMenuItem.MyProfile
 
-    this.dataService = data;
-     
-    window.localStorage.setItem('loginResult', JSON.stringify(new AuthResult()))
+    this.dataService = data;         
   }
   ngOnDestroy(): void {
     this.routerSubs.unsubscribe()
@@ -71,17 +70,7 @@ export class StartPageComponent implements OnInit, OnDestroy {
           this.authorized = false                  
       })      
   }
-
-  onSearchButtonPressed(title: string)
-  {
-    this.searchResult = this.dataService.getPostsByTitle(title);
-  }
-
-  onClearPresed()
-  {
-    this.searchResult = [];    
-  }
-
+  
   onAvatarMouseOver()
   {
     this.displayMenu = true

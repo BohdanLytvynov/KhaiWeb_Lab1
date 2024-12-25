@@ -36,7 +36,8 @@ export class AddPostComponent {
         text: this.text, 
         category: this.category,
         language: this.language,
-        visibleOnSite: this.visible
+        visibleOnSite: this.visible,
+        createdDate: new Date()
       }
 
       console.log(post)
